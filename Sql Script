@@ -1,0 +1,82 @@
+CREATE DATABASE ecommerce_db;-- 
+USE ecommerce_db;
+-- CREATE TABLE Customers (
+-- cust_id INT AUTO_INCREMENT PRIMARY KEY,
+-- name VARCHAR(100) NOT NULL,
+-- email VARCHAR(100) UNIQUE,
+-- phone VARCHAR(15),
+-- created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- CREATE TABLE Addresses (
+-- address_id INT AUTO_INCREMENT PRIMARY KEY,
+-- customer_id INT,
+-- street VARCHAR(255),
+-- city VARCHAR(100),
+-- state VARCHAR(100),
+-- postal_code VARCHAR(20),
+-- country VARCHAR(100),
+
+-- FOREIGN KEY (customer_id) REFERENCES Customers(cust_id)
+--     ON DELETE CASCADE
+
+-- );
+
+-- CREATE TABLE Categories (
+-- category_id INT AUTO_INCREMENT PRIMARY KEY,
+-- category_name VARCHAR(100) NOT NULL
+-- );
+
+
+
+-- CREATE TABLE Products (
+-- product_id INT AUTO_INCREMENT PRIMARY KEY,
+-- category_id INT,
+-- name VARCHAR(150) NOT NULL,
+-- price DECIMAL(10,2) NOT NULL,
+
+-- FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+--     ON DELETE SET NULL
+
+-- );
+
+
+-- CREATE TABLE Orders (
+-- order_id INT AUTO_INCREMENT PRIMARY KEY,
+-- customer_id INT,
+-- order_date DATE,
+-- total_amount DECIMAL(10,2),
+
+-- FOREIGN KEY (customer_id) REFERENCES Customers(cust_id)
+--     ON DELETE CASCADE
+
+-- );
+
+
+-- CREATE TABLE Payments (
+-- payment_id INT AUTO_INCREMENT PRIMARY KEY,
+-- order_id INT UNIQUE,
+-- payment_method VARCHAR(50),
+-- payment_status VARCHAR(50),
+-- payment_date DATE,
+-- amount DECIMAL(10,2),
+
+-- FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+--     ON DELETE CASCADE
+
+-- );
+
+
+CREATE TABLE Order_Items (
+order_item_id INT AUTO_INCREMENT PRIMARY KEY,
+order_id INT,
+product_id INT,
+quantity INT,
+price DECIMAL(10,2),
+
+FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+    ON DELETE CASCADE,
+FOREIGN KEY (product_id) REFERENCES Products(product_id)
+    ON DELETE CASCADE
+
+);
