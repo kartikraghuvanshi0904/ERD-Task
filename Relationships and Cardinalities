@@ -1,0 +1,79 @@
+## 🔗 Relationships and Cardinalities
+
+The following relationships define how different entities in the e-commerce system interact with each other:
+
+### 1. Customers → Orders
+
+* **Relationship:** A customer places orders
+* **Cardinality:** One-to-Many (1:N)
+* **Explanation:** A single customer can place multiple orders, but each order belongs to only one customer.
+
+---
+
+### 2. Customers → Addresses
+
+* **Relationship:** A customer has addresses
+* **Cardinality:** One-to-Many (1:N)
+* **Explanation:** A customer can have multiple addresses (e.g., home, office), but each address is associated with only one customer.
+
+---
+
+### 3. Orders → Payments
+
+* **Relationship:** An order has a payment
+* **Cardinality:** One-to-One (1:1)
+* **Explanation:** Each order is linked to one payment record, and each payment corresponds to one specific order.
+
+---
+
+### 4. Orders → Order_Items
+
+* **Relationship:** An order contains items
+* **Cardinality:** One-to-Many (1:N)
+* **Explanation:** A single order can contain multiple items, but each order item belongs to only one order.
+
+---
+
+### 5. Products → Order_Items
+
+* **Relationship:** A product appears in order items
+* **Cardinality:** One-to-Many (1:N)
+* **Explanation:** A product can be included in multiple order items, but each order item refers to one specific product.
+
+---
+
+### 6. Orders ↔ Products (via Order_Items)
+
+* **Relationship:** Many-to-Many (M:N)
+* **Resolved By:** Order_Items table
+* **Explanation:**
+
+  * One order can contain multiple products
+  * One product can appear in multiple orders
+  * This many-to-many relationship is resolved using the Order_Items table
+
+---
+
+### 7. Categories → Products
+
+* **Relationship:** A category contains products
+* **Cardinality:** One-to-Many (1:N)
+* **Explanation:** A category can include multiple products, but each product belongs to only one category.
+
+---
+Relationship Summary Table
+Relationship	Type	Cardinality	Description
+Customers → Addresses	One-to-Many	1	A customer can have multiple addresses
+Customers → Orders	One-to-Many	1	A customer can place multiple orders
+Orders → Order_Items	One-to-Many	1	An order contains multiple products
+Products → Order_Items	One-to-Many	1	A product can be part of many orders
+Categories → Products	One-to-Many	1	A category contains multiple products
+Products → Inventory	One-to-One	1:1	Each product has one inventory record
+Orders → Payments	One-to-One	1:1	Each order has one payment
+🧠 Explanation
+
+One-to-Many (1): One record in a table is related to multiple records in another table.
+
+One-to-One (1:1): One record in a table is linked to exactly one record in another table.
+
+Many-to-Many (M): Resolved using a junction table (Order_Items in this case).
