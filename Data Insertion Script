@@ -1,0 +1,82 @@
+-- USE ecommerce_db;
+-- INSERT INTO Customers (name, email, phone) VALUES
+-- ('Amit Sharma', 'amit@example.com', '9876543210'),
+-- ('Priya Singh', 'priya@example.com', '9876543211'),
+-- ('Rahul Verma', 'rahul@example.com', '9876543212'),
+-- ('Sneha Gupta', 'sneha@example.com', '9876543213'),
+-- ('Karan Mehta', 'karan@example.com', '9876543214'),
+-- ('Neha Kapoor', 'neha@example.com', '9876543215'),
+-- ('Rohit Jain', 'rohit@example.com', '9876543216'),
+-- ('Anjali Patel', 'anjali@example.com', '9876543217'),
+-- ('Vikas Yadav', 'vikas@example.com', '9876543218'),
+-- ('Pooja Mishra', 'pooja@example.com', '9876543219');
+
+-- INSERT INTO Addresses (customer_id, street, city, state, postal_code, country) VALUES
+-- (1, 'Street 1', 'Delhi', 'Delhi', '110001', 'India'),
+-- (2, 'Street 2', 'Mumbai', 'Maharashtra', '400001', 'India'),
+-- (3, 'Street 3', 'Bangalore', 'Karnataka', '560001', 'India'),
+-- (4, 'Street 4', 'Chennai', 'Tamil Nadu', '600001', 'India'),
+-- (5, 'Street 5', 'Kolkata', 'West Bengal', '700001', 'India'),
+-- (6, 'Street 6', 'Pune', 'Maharashtra', '411001', 'India'),
+-- (7, 'Street 7', 'Hyderabad', 'Telangana', '500001', 'India'),
+-- (8, 'Street 8', 'Ahmedabad', 'Gujarat', '380001', 'India'),
+-- (9, 'Street 9', 'Jaipur', 'Rajasthan', '302001', 'India'),
+-- (10, 'Street 10', 'Lucknow', 'UP', '226001', 'India');
+
+
+-- INSERT INTO Categories (category_name) VALUES
+-- ('Electronics'),
+-- ('Clothing'),
+-- ('Books'),
+-- ('Home Appliances'),
+-- ('Sports');
+
+
+-- INSERT INTO Products (category_id, name, price) VALUES
+-- (1, 'Smartphone', 15000),
+-- (1, 'Laptop', 55000),
+-- (2, 'T-Shirt', 500),
+-- (2, 'Jeans', 1200),
+-- (3, 'Novel Book', 300),
+-- (4, 'Microwave', 8000),
+-- (4, 'Refrigerator', 25000),
+-- (5, 'Football', 700),
+-- (5, 'Cricket Bat', 1500),
+-- (1, 'Headphones', 2000);
+
+
+-- INSERT INTO Orders (customer_id, order_date, total_amount) VALUES
+-- (1, '2026-03-01', 15000),
+-- (2, '2026-03-02', 500),
+-- (3, '2026-03-03', 1200),
+-- (4, '2026-03-04', 300),
+-- (5, '2026-03-05', 8000),
+-- (6, '2026-03-06', 25000),
+-- (7, '2026-03-07', 700),
+-- (8, '2026-03-08', 1500),
+-- (9, '2026-03-09', 2000),
+-- (10, '2026-03-10', 55000);
+
+-- INSERT INTO Payments (order_id, payment_method, payment_status, payment_date, amount) VALUES
+-- (1, 'UPI', 'Completed', '2026-03-01', 15000),
+-- (2, 'Card', 'Completed', '2026-03-02', 500),
+-- (3, 'Cash', 'Completed', '2026-03-03', 1200),
+-- (4, 'UPI', 'Completed', '2026-03-04', 300),
+-- (5, 'Card', 'Completed', '2026-03-05', 8000),
+-- (6, 'UPI', 'Completed', '2026-03-06', 25000),
+-- (7, 'Cash', 'Completed', '2026-03-07', 700),
+-- (8, 'Card', 'Completed', '2026-03-08', 1500),
+-- (9, 'UPI', 'Completed', '2026-03-09', 2000),
+-- (10, 'Card', 'Completed', '2026-03-10', 55000);
+
+INSERT INTO Order_Items (order_id, product_id, quantity, price) VALUES
+(1, 1, 1, 15000),
+(2, 3, 1, 500),
+(3, 4, 1, 1200),
+(4, 5, 1, 300),
+(5, 6, 1, 8000),
+(6, 7, 1, 25000),
+(7, 8, 1, 700),
+(8, 9, 1, 1500),
+(9, 10, 1, 2000),
+(10, 2, 1, 55000);
